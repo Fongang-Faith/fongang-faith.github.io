@@ -1,0 +1,160 @@
+
+     <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Collaboration Platform</title>
+    
+
+    <style>
+    	CSS 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+}
+
+section {
+    background-color: #f7f7f7;
+    padding: 1em;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    background-color: #fff;
+    padding: 1em;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-weight: bold;
+    margin-top: 0;
+}
+
+h2 {
+    font-weight: bold;
+    margin-top: 0;
+}
+
+#project-list, #task-list, #message-board {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#message-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#message-input {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+}
+
+#send-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#tasks">Tasks</a></li>
+                <li><a href="#messages">Messages</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="dashboard">
+            <h1>Dashboard</h1>
+            <div class="card">
+                <h2>Project Overview</h2>
+                <ul>
+                    <li>Project Name: <span id="project-name"></span></li>
+                    <li>Deadline: <span id="project-deadline"></span></li>
+                    <li>Progress: <span id="project-progress"></span></li>
+                </ul>
+            </div>
+        </section>
+        <section id="projects">
+            <h1>Projects</h1>
+            <div class="card">
+                <h2>Project List</h2>
+                <ul id="project-list">
+                    <!-- dynamically generated project list -->
+                </ul>
+            </div>
+        </section>
+        <section id="tasks">
+            <h1>Tasks</h1>
+            <div class="card">
+                <h2>Task List</h2>
+                <ul id="task-list">
+                    <!-- dynamically generated task list -->
+                </ul>
+            </div>
+        </section>
+        <section id="messages">
+            <h1>Messages</h1>
+            <div class="card">
+                <h2>Message Board</h2>
+                <ul id="message-board">
+                    <!-- dynamically generated message board -->
+                </ul>
+                <form id="message-form">
+                    <input type="text" id="message-input" placeholder="Type a message...">
+                    <button id="send-button">Send</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+</body>
+</html>
