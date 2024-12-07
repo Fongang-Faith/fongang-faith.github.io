@@ -7,8 +7,8 @@
     <title>Group Collaboration Platform</title>
      
 
-    <style>
-    	CSS 
+    <!-- <style>
+ 
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -34,9 +34,9 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: space-between;
-}
+} -->
 
-nav li {
+<!-- nav li {
     margin-right: 20px;
 
 }
@@ -58,8 +58,8 @@ section {
     padding: 1em;
     margin-bottom: 20px;
     box-shadow: 0 0 18px rebeccapurple;
-    width: 400px;
-    border-radius: 10px;
+    width: 400px; -->
+    <!-- border-radius: 10px;
     
 }
 
@@ -152,8 +152,198 @@ h2 {
     box-shadow: 0 0 10px rgb(134, 80, 187);
     border-radius: 7px;
 
+} -->
+
+<style>
+    /* General Styling */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font stack */
+        margin: 0;
+        background-color: #f4f4f4; /* Light gray background */
+        color: #333; /* Dark gray text */
+        transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions for mode toggle */
+    }
+
+    .container {
+        max-width: 800px;  /* Increased max-width for larger screens */
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    h1, h2 {
+        color: #2c3e50; /* Darker headings */
+    }
+
+    a {
+        color: #3498db; /* Blue links */
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+    .mode-toggle {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .login{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+   /* Header */
+header {
+    background-color: #2c3e50; /* Darker, more professional blue */
+    color: #fff;
+    padding: 1em 0; /* Adjust padding top/bottom */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    position: sticky; /* Keep header at the top */
+    top: 0;
+    z-index: 10; /* Ensure header stays on top of other content */
 }
-    </style>
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center navigation items */
+}
+
+nav li {
+    margin: 0 15px; /* Increased spacing between links */
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500; /* Slightly bolder font-weight */
+    text-transform: uppercase; /* Uppercase for a modern look */
+    padding: 10px 15px;  /* Padding around links */
+    border-radius: 5px;  /* Rounded corners */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    position: relative; /* For the underline effect */
+    overflow: hidden; /* Hide the extending underline */
+}
+
+.buttons-container {  /* Style the button container */
+    display: flex;
+    align-items: center;
+}
+
+#mode-toggle, .login { /*Add . before login to select the class */
+    margin-left: 10px; /* Space between buttons */
+}
+
+
+nav a:before { /* Create the underline */
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;  /* Underline thickness */
+    /* background-color: #e74c3c; Underline color */
+    transform: translateX(-100%); /* Initially hidden to the left */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+nav a:hover::before,
+nav a:focus::before {
+    transform: translateX(0); /* Slide in underline on hover/focus */
+}
+
+
+
+nav a.active { /* Style the active link */
+   /* background-color: #e74c3c; Match active link background to hover color */
+    color: #fff;
+}
+
+/* Media query for smaller screens  */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack navigation vertically on smaller screens */
+        align-items: center; 
+    }
+    nav li {
+        margin: 10px 0; /* Adjust vertical spacing for stacked navigation */
+    }
+}
+
+    /* Sections */
+    section {
+        background-color: #fff;
+        margin-bottom: 20px;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .card {  /*Removed card. Not really needed with section styling. */
+       padding: 1em;
+
+    }
+
+    /* Forms and Inputs */
+     #user-form input[type="file"] { 
+         display: block; /*file input takes full width */
+         margin: 10px 0;
+     }
+    #user-form button, #add-task, #send-button, input[type="submit"] { /* Styling for buttons */
+        background-color: #3498db;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-top: 10px;
+    }
+
+    #user-form button:hover,  #add-task:hover, #send-button:hover, input[type="submit"]:hover {
+        background-color: #2980b9;
+    }
+
+
+    /* Task list  */
+    #task-lists li { /* Style list items */
+        padding: 8px;
+        border-bottom: 1px solid #eee;
+        list-style-type: disc; /* Add bullet points */
+        cursor: pointer;
+    }
+
+    #task-lists li.done { /* Style for completed tasks */
+        text-decoration: line-through;
+        color: #999;
+    }
+
+
+    /* Dark mode */
+    body.dark-mode {
+        background-color: #222;
+        color: #eee;
+    }
+
+    body.dark-mode header { /* Inverted header colors in dark mode */
+        background-color: #2c3e50;
+        color: #fff;
+    }
+    /* Responsive design */
+     @media (max-width: 600px) { /* Adjust layout for smaller screens */
+        .container {
+            max-width: 90%;
+        }
+        nav ul {
+            flex-direction: column; /* Stack navigation vertically */
+            align-items: center;
+        }
+         section {
+            width: 90%;
+        }
+
+    }
+
+</style> 
     <!--automaitc time-->
     <script>
         function startTime() {
@@ -175,9 +365,9 @@ h2 {
 <!--  automatic affirmation message-->
 <script>
     const affirmations = [
-        "You are cabable and strong🧐",
+        "You are capable and strong🧐",
         "Believe in yourself😍",
-        "Stay posoitive and fucosed🥺",
+        "Stay positive and focused🥺",
         "Keep moving forward🤩",
         "Your dreams are within reach😎",
         "You are unique and special😁",
@@ -190,7 +380,7 @@ h2 {
         const randomIndex = Math.floor(Math.random()*affirmations.length);
         document.getElementById("affirmation").innerText=affirmations[randomIndex];
     }
-    setInterval(getAffirmation,3000);
+    setInterval(getAffirmation,5000);
     getAffirmation();
    </script>
         </head>
@@ -199,28 +389,24 @@ h2 {
     <header>
         <nav>
             <ul>
-                
-                <li style="background-color:rgb(78, 81, 82); box-shadow:3px 3px grey;"><a href="#dashboard">Dashboard</a></li>
-                <li style="background-color:rgb(78, 81, 82); box-shadow:3px 3px grey;"><a href="#projects">Projects</a></li>
-                <li style="background-color:rgb(78, 81, 82); box-shadow:3px 3px grey;"><a href="#tasks">Tasks</a></li>
-                <li style="background-color:rgb(78, 81, 82); box-shadow:3px 3px grey;"><a href="#messages">Messages</a></li>
-          
-                </ul>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#tasks">Tasks</a></li>
+                <li><a href="#messages">Messages</a></li>
+            </ul>
         </nav>
     </header>
-    <button id="mode-toggle">Toggle Mode</button>
-    <form action="logoutprocess.php" method="post">
-        <input type="submit" value="Logout">
-      </form>
-      <center>
-        <div id="txt"></div>
-      </center>
-      <div class="container">
+    <div class="buttons-container">
+        <button id="mode-toggle" class="mode-toggle">Toggle Mode</button>
+        <form action="login.html" method="get">
+            <input class="login" type="submit" value="login">
+        </form>
+    </div>
+    <div class="container">
         <h1>Daily affirmation🎆</h1> 
-         <div id="affirmation"></div>
-     </div>
+        <div id="affirmation"></div>
+    </div>
     <main>
-        
         <section id="dashboard">
             <h1>Dashboard</h1>
             <div class="card">
