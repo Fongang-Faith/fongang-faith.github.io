@@ -85,7 +85,7 @@ button[type="submit"]:hover {
     <input type="text" id="name" name="email" required>
     <label for="password">Password:</label>
     <input type="password" id="password" name="password" required>
-    <button type="submit" name="submit">Sign Up</button>
+    <button type="submit" name="submit" value="submit">Sign Up</button>
     <p class="has_account">
       Already have an account? <a href="login.html">Login</a>
     </p>
