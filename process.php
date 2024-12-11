@@ -2,7 +2,7 @@
 include 'database.php';
 $email = $_POST['email'];
 
-$sql = "SELECT * FROM student WHERE email = '$email'";
+$sql = "SELECT * FROM user WHERE email = '$email'";
 $result = $con->query($sql);
 
 if ($result->num_rows > 0) {
@@ -13,19 +13,11 @@ if ($result->num_rows > 0) {
 else{
 if(isset($_POST['submit']))
 {
-    $uname=$_POST['uname'];
+    $name=$_POST['uname'];
     $email=$_POST['email'];
     $password=$_POST['password'];
-    $gender=$_POST['gender'];
-    $education=$_POST['education'];
-   $chk="";
-foreach ($education as $chk1)
-{
-$chk.=$chk1.",";
 
-}
-
-  $sql="INSERT into student(name,email,password,gender,education) values('$uname','$email','$password','$gender','$chk')";
+  $sql="INSERT into user(name,email,password) values('$name','$email','$password')";
   if(mysqli_query($con,$sql))
 {
      

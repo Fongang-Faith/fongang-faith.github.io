@@ -2,7 +2,7 @@
 $servername="localhost";
 $username="root";
 $password="";
-$database="library";
+$database="groupon_db";
 $con=mysqli_connect($servername,$username,$password,$database); 
 if(!$con)
 {
