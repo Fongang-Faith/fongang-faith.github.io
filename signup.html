@@ -78,14 +78,14 @@ button[type="submit"]:hover {
 <body>
 <div class="container">
   <h1>Sign Up</h1>
-  <form name="signupForm" method="post" action="process.php" onsubmit="handleSignup(event)">
+  <form name="signupForm" method="POST" action="process.php" onsubmit="return validateForm()">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" required>
     <label for="email">Email:</label>
     <input type="text" id="name" name="email" required>
     <label for="password">Password:</label>
     <input type="password" id="password" name="password" required>
-    <button type="submit">Sign Up</button>
+    <button type="submit" name="submit">Sign Up</button>
     <p class="has_account">
       Already have an account? <a href="login.html">Login</a>
     </p>
