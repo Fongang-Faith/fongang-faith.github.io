@@ -9,7 +9,7 @@ if(isset($_POST['submit']))
     if(mysqli_num_rows($que)>0)
     {
        
-       echo "<script>window.open('test.html','_self')</script>";
+       echo "<script>window.open('index.html','_self')</script>";
     }
     else
     { 

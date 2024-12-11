@@ -1,6 +1,6 @@
 <?php
 include 'database.php';
-// $email = $_POST['email'];
+$email = $_POST['email'];
 
 $sql = "SELECT * FROM user WHERE email = '$email'";
 $result = $con->query($sql);
