@@ -344,26 +344,10 @@ nav a.active { /* Style the active link */
     }
 
 </style> 
-    <!--automaitc time-->
-    <script>
-        function startTime() {
-          var today = new Date();
-          var h = today.getHours();
-          var m = today.getMinutes();
-          var s = today.getSeconds();
-          m = checkTime(m);
-          s = checkTime(s);
-          document.getElementById('txt').innerHTML =
-          h + ":" + m + ":" + s;
-          var t = setTimeout(startTime, 500);
-        }
-        function checkTime(i) {
-          if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-          return i;
-        }
-        </script>
+
+
 <!--  automatic affirmation message-->
-<script>
+<script>               
     const affirmations = [
         "You are capable and strong🧐",
         "Believe in yourself😍",
@@ -406,6 +390,9 @@ nav a.active { /* Style the active link */
         <h1>Daily affirmation🎆</h1> 
         <div id="affirmation"></div>
     </div>
+    <center>
+        <div id="txt"></div>
+      </center>
     <main>
         <section id="dashboard">
             <h1>Dashboard</h1>
@@ -493,7 +480,24 @@ nav a.active { /* Style the active link */
             event.target.classList.toogle("done");
         }
       </script>
-    
+          <!--automaitc time-->
+      <script>
+        function startTime() {
+          var today = new Date();
+          var h = today.getHours();
+          var m = today.getMinutes();
+          var s = today.getSeconds();
+          m = checkTime(m);
+          s = checkTime(s);
+          document.getElementById('txt').innerHTML =
+          h + ":" + m + ":" + s;
+          var t = setTimeout(startTime, 500);
+        }
+        function checkTime(i) {
+          if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+          return i;
+        }
+        </script>
 </body>
 </html>
 
