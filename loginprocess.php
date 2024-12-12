@@ -13,7 +13,7 @@ if(isset($_POST['submit']))
     }
     else
     { 
-        echo "<script>window.open('login.php','_self')</script>";
+        echo "<script>window.open('login.html','_self')</script>";
         
     }
    
